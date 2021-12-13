@@ -1,4 +1,4 @@
-package com.sigsauer.univ.birthcalculator.controller;
+package com.sigsauer.univ.birthcalculator.controller.web.home;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -10,6 +10,6 @@ public class HomeController {
     @GET
     @Path("")
     public Response home() {
-        return Response.ok("Hello bitches!").build();
+        return Response.ok("Hello! This is start page :)").build();
     }
 }
