@@ -1,8 +1,8 @@
 package com.sigsauer.univ.birthcalculator.service.birth;
 
 import com.sigsauer.univ.birthcalculator.service.birth.bean.BirthTimer;
-import com.sigsauer.univ.birthcalculator.service.shared.ServiceFactory;
 import com.sigsauer.univ.birthcalculator.service.user.UserService;
+import com.sigsauer.univ.birthcalculator.service.user.UserServiceImpl;
 import com.sigsauer.univ.birthcalculator.utils.DateUtils;
 import org.joda.time.*;
 
@@ -11,7 +11,7 @@ import java.util.Date;
 public class BirthServiceImpl implements BirthService{
     private final String PRETTY_MESSAGE = "Today is %s. Your next birthday will %s. Left %s months, %s weeks and %s days until you nex birthday.";
 
-    UserService userService = ServiceFactory.getUserService();
+    UserService userService = new UserServiceImpl();
 
     @Override
     public BirthTimer calculateTimeUntilBirthday(Long userId, Date localDate) {

@@ -1,11 +1,8 @@
 package com.sigsauer.univ.birthcalculator.controller.web.birth;
 
-import com.sigsauer.univ.birthcalculator.model.User;
 import com.sigsauer.univ.birthcalculator.service.birth.BirthService;
+import com.sigsauer.univ.birthcalculator.service.birth.BirthServiceImpl;
 import com.sigsauer.univ.birthcalculator.service.birth.bean.BirthTimer;
-import com.sigsauer.univ.birthcalculator.service.shared.ServiceFactory;
-import com.sigsauer.univ.birthcalculator.service.user.UserService;
-import com.sigsauer.univ.birthcalculator.service.user.UserServiceImpl;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -15,7 +12,7 @@ import java.util.Date;
 @Path("/birth")
 public class BirthController {
 
-    private final BirthService birthService = ServiceFactory.getBirthService();
+    private final BirthService birthService = new BirthServiceImpl();
 
     @GET
     @Path("/{id}")
@@ -27,3 +24,5 @@ public class BirthController {
     }
 
 }
+//
+

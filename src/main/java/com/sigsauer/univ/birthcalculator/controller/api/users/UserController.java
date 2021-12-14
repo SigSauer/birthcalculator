@@ -2,7 +2,6 @@ package com.sigsauer.univ.birthcalculator.controller.api.users;
 
 import com.sigsauer.univ.birthcalculator.controller.api.users.bean.CreateUserRequest;
 import com.sigsauer.univ.birthcalculator.controller.api.users.bean.UserResponse;
-import com.sigsauer.univ.birthcalculator.service.shared.ServiceFactory;
 import com.sigsauer.univ.birthcalculator.service.user.UserService;
 import com.sigsauer.univ.birthcalculator.service.user.UserServiceImpl;
 
@@ -15,8 +14,7 @@ import java.util.stream.Collectors;
 @Path("users")
 public class UserController {
 
-    private final UserService userService = ServiceFactory.getUserService();
-
+    private final UserService userService = new UserServiceImpl();
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

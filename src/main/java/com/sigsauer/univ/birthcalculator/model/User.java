@@ -2,15 +2,25 @@ package com.sigsauer.univ.birthcalculator.model;
 
 import com.sigsauer.univ.birthcalculator.utils.StringUtils;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "users")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String email;
     private String password;
     private String name;
     private Date birth;
+
+
+    
+
+
 
     public User() {
     }
